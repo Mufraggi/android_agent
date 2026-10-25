@@ -28,6 +28,16 @@ L'identifiant personnel que l'utilisateur fournit pour accéder à un fournisseu
 _Code_ : `ApiKey`
 _Éviter_ : token, credential, secret
 
+**Instructions personnelles** :
+Un court texte libre que l'utilisateur ajoute au prompt système de l'agent (ton, préférences) ; il ne prime jamais sur les règles du prompt de base.
+_Code_ : `PersonalInstructions`
+_Éviter_ : prompt personnalisé, persona, custom instructions
+
+**Budget quotidien** :
+Le nombre maximal de tokens que les runs peuvent consommer dans une journée locale ; au-delà, aucun run ne démarre.
+_Code_ : `DailyTokenBudget`
+_Éviter_ : quota, limite, crédit
+
 ### Exécution
 
 **Run** :
@@ -41,7 +51,7 @@ _Code_ : `RunIteration`
 _Éviter_ : tour, étape, boucle
 
 **Issue** :
-La façon dont un run s'est terminé (achevé, plafond d'itérations atteint, échéance dépassée, annulé, interrompu, échoué).
+La façon dont un run s'est terminé (achevé, plafond d'itérations atteint, échéance dépassée, budget épuisé, annulé, interrompu, échoué).
 _Code_ : `RunOutcome`
 _Éviter_ : résultat, statut, fin
 

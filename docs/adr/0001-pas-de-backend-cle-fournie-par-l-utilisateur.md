@@ -5,4 +5,5 @@ L'app est publiée sur le Play Store mais n'a aucun serveur : chaque utilisateur
 ## Consequences
 
 - Pas d'analytics ni de crash reporting distant : le débogage chez les testeurs passe par l'export manuel du journal.
+- Aucune sauvegarde Android, ni cloud ni de téléphone à téléphone (`allowBackup="false"`, `dataExtractionRules` excluant tout) : changer de téléphone fait perdre conversations, souvenirs et tâches planifiées, et la clé Keystore ne serait de toute façon pas transférée.
 - Ajouter un backend plus tard (abonnement, sync) remettrait en cause le formulaire « Sécurité des données » du Play Store.
