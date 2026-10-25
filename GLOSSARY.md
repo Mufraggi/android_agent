@@ -66,7 +66,7 @@ _Code_ : `Reminder`
 _Éviter_ : alarme, alerte, tâche
 
 **Écriture sensible** :
-Une action d'outil visible hors de l'app, qui crée ou supprime un déclenchement futur de runs, ou qui contacte un domaine non autorisé (créer un événement de calendrier, créer ou annuler une tâche planifiée) ; créer un rappel n'en est pas une.
+Une action d'outil visible hors de l'app, qui crée ou supprime un déclenchement futur de runs, qui contacte un domaine non autorisé, ou qui retient un souvenir dans un run exposé (créer un événement de calendrier, créer ou annuler une tâche planifiée) ; créer un rappel n'en est pas une.
 _Code_ : `SensitiveWrite`
 _Éviter_ : action critique, écriture (sans qualificatif)
 
@@ -79,6 +79,16 @@ _Éviter_ : catégorie, module, pack
 Un domaine web que l'utilisateur a écrit lui-même dans la conversation ou la consigne d'une tâche planifiée, et que l'agent peut donc contacter sans confirmation.
 _Code_ : `AllowedDomain`
 _Éviter_ : whitelist, domaine de confiance
+
+**Contenu tiers** :
+Un résultat d'outil dont le texte a été écrit par quelqu'un d'autre que l'utilisateur ou l'agent (page web, événement de calendrier).
+_Code_ : `ThirdPartyContent`
+_Éviter_ : contenu externe, données non fiables
+
+**Run exposé** :
+Un run qui a reçu un contenu tiers ; y retenir un souvenir devient une écriture sensible.
+_Code_ : `Run.exposed`
+_Éviter_ : run contaminé, run tainted
 
 **Confirmation** :
 L'accord explicite (Oui/Non) que l'utilisateur donne avant que l'agent n'exécute une écriture sensible ; sans réponse dans le délai imparti, l'écriture est abandonnée.
