@@ -35,6 +35,16 @@ Une exécution complète de la boucle de l'agent, déclenchée par un message de
 _Code_ : `Run`
 _Éviter_ : exécution, tour, job, session
 
+**Itération** :
+Une étape d'un run : un appel au modèle suivi de l'exécution des outils qu'il a demandés ; un run en compte un nombre plafonné.
+_Code_ : `RunIteration`
+_Éviter_ : tour, étape, boucle
+
+**Issue** :
+La façon dont un run s'est terminé (achevé, plafond d'itérations atteint, échéance dépassée, annulé, interrompu, échoué).
+_Code_ : `RunOutcome`
+_Éviter_ : résultat, statut, fin
+
 **Journal** :
 L'historique des runs : déclencheur, outils appelés, tokens consommés, issue.
 _Code_ : `RunLog`
