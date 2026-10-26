@@ -10,4 +10,5 @@ dependencies {
     api(libs.kotlinx.serialization.json)
 
     testImplementation(libs.kotest.assertions.arrow)
+    testImplementation(libs.kotlinx.coroutines.test)
 }
